@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conciliando | Centro de Conciliación Extrajudicial — San Borja, Lima</title>
+<meta name="description" content="Centro de conciliación en San Borja, Lima. Conciliaciones de familia, civiles y comerciales con conciliadores acreditados. Acuerdo con valor legal en semanas. Reserva tu cita." />
+<meta property="og:title" content="Conciliando | Resuelve tu conflicto sin ir a juicio" />
+<meta property="og:description" content="Conciliadores acreditados. Acuerdo con valor legal en semanas, no en años. Reserva tu cita." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#F5F0E4" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  ═══════════════════════════════════════════════════════════════════════════
+  CÓMO PONER TUS FOTOS Y TU VIDEO  (no hace falta tocar el CSS)
+  ───────────────────────────────────────────────────────────────────────────
+  FOTOS → busca el comentario "foto:" al lado de cada bloque y agrega el
+  atributo style con la ruta de tu imagen. Ejemplo:
+
+      <div class="cardImg" style="--img:url('img/alimentos.jpg')"></div>
+
+  Luego borra el <span class="phNote">…</span> que está al lado.
+  Si no pones --img se muestra el marcador crema con el nombre de la foto.
+
+  Tamaños:  carrusel 1920×1080 · servicios 800×600 (4:3)
+            equipo 600×750 (4:5) · quiénes somos 1200×900 (4:3)
+  Formato:  .jpg o .webp, menos de 400 KB por imagen.
+
+  VIDEO → en la sección Experiencia, pega el enlace dentro de data-video="":
+
+      <div class="videoBox" id="videoBox" data-video="https://youtu.be/AbCdEfG">
+
+  Acepta YouTube, Vimeo o un archivo .mp4. Si lo dejas vacío se ve el
+  marcador con el botón de play.
+  ═══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONCILIANDO — Landing
+   Paleta: blanco + crema, tinta oscura cálida, verde jurídico y latón.
+   Tipografía: Bebas Neue (display) + Montserrat (texto y utilidades).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root{
+  --paper:      #FFFFFF;
+  --cream:      #F5F0E4;
+  --cream-2:    #EDE5D4;
+  --cream-3:    #E3D8C1;
+
+  --ink:        #17150F;
+  --ink-2:      #2C281F;
+  --body:       #55504A;
+  --muted:      #8B8479;
+
+  --green:      #26463C;
+  --green-2:    #1A332B;
+  --green-soft: #E4EBE6;
+  --brass:      #9A7B3F;
+  --brass-2:    #C4A063;
+  --wa:         #25D366;
+
+  --line:       rgba(23,21,15,.13);
+  --line-2:     rgba(23,21,15,.07);
+
+  --display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --sans:    'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --sh-sm: 0 2px 10px rgba(23,21,15,.05);
+  --sh:    0 18px 40px -22px rgba(23,21,15,.32);
+  --sh-lg: 0 34px 70px -34px rgba(23,21,15,.45);
+
+  --wrap: 1220px;
+  --pad: 22px;
+  --head-h: 78px;
+  --r: 4px;
+
+  /* Marcador de foto (se ve cuando no hay --img) */
+  --ph:
+    radial-gradient(120% 100% at 25% 12%, rgba(255,255,255,.75), rgba(255,255,255,0) 62%),
+    repeating-linear-gradient(135deg, rgba(23,21,15,.045) 0 2px, rgba(0,0,0,0) 2px 11px),
+    linear-gradient(155deg, var(--cream-2), var(--cream-3));
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ overflow-x:hidden; scroll-behavior:smooth; scroll-padding-top: calc(var(--head-h) + 14px); }
+
+body{
+  margin:0; background:var(--paper); color:var(--body);
+  font-family:var(--sans); font-size:16px; font-weight:400; line-height:1.7;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body.is-locked{ overflow:hidden; }
+
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+p{ margin:0; }
+h1,h2,h3,h4{ margin:0; color:var(--ink); font-family:var(--display); font-weight:400; line-height:.94; letter-spacing:.012em; }
+button{ font-family:inherit; }
+
+:focus-visible{ outline:2.5px solid var(--brass); outline-offset:3px; border-radius:2px; }
+
+.skip{ position:absolute; left:-9999px; top:10px; z-index:300; background:var(--ink); color:#fff; padding:12px 20px; }
+.skip:focus{ left:12px; }
+
+.wrap{ width:100%; max-width:var(--wrap); margin:0 auto; padding:0 var(--pad); }
+
+/* ── Secciones ──────────────────────────────────────────────────────────── */
+.sec{ padding:104px 0; }
+.sec--cream{ background:var(--cream); }
+.sec--ink{ background:var(--ink); }
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:11px;
+  font-family:var(--sans); font-size:.68rem; font-weight:600;
+  letter-spacing:.24em; text-transform:uppercase; color:var(--brass);
+  margin-bottom:20px;
+}
+.eyebrow::before{ content:""; width:34px; height:1px; background:var(--brass); }
+.sec--ink .eyebrow{ color:var(--brass-2); }
+.sec--ink .eyebrow::before{ background:var(--brass-2); }
+
+.title{ font-size:clamp(2.3rem, 5vw, 3.6rem); color:var(--ink); }
+.sec--ink .title{ color:var(--cream); }
+.lead{ font-size:1.03rem; line-height:1.8; margin-top:20px; max-width:60ch; color:var(--body); }
+.sec--ink .lead{ color:#C9C3B6; }
+
+.secHead{ max-width:660px; margin-bottom:58px; }
+.secHead--center{ margin-left:auto; margin-right:auto; text-align:center; }
+.secHead--center .eyebrow{ justify-content:center; }
+.secHead--center .lead{ margin-left:auto; margin-right:auto; }
+
+/* ── Botones ────────────────────────────────────────────────────────────── */
+.btn{
+  position:relative; display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  font-family:var(--sans); font-size:.74rem; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase; line-height:1;
+  padding:16px 30px; border:1.5px solid transparent; border-radius:var(--r);
+  cursor:pointer; white-space:nowrap; overflow:hidden; isolation:isolate;
+  transition:color .28s ease, border-color .28s ease, background-color .28s ease,
+             transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s ease;
+}
+.btn > *{ position:relative; z-index:1; }
+.btn::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  transform:scaleY(0); transform-origin:bottom;
+  transition:transform .34s cubic-bezier(.2,.7,.3,1);
+}
+.btn:hover{ transform:translateY(-2px); }
+.btn:hover::before{ transform:scaleY(1); }
+.btn:active{ transform:translateY(0); }
+.btn svg{ flex-shrink:0; }
+
+.btn--solid{ background:var(--green); color:#fff; box-shadow:0 12px 26px -16px rgba(38,70,60,.9); }
+.btn--solid::before{ background:var(--green-2); }
+.btn--solid:hover{ box-shadow:0 18px 34px -18px rgba(23,21,15,.7); }
+
+.btn--line{ background:transparent; color:var(--ink); border-color:var(--line); }
+.btn--line::before{ background:var(--ink); }
+.btn--line:hover{ color:var(--cream); border-color:var(--ink); }
+
+.btn--light{ background:var(--cream); color:var(--ink); }
+.btn--light::before{ background:#fff; }
+.btn--light:hover{ color:var(--ink); }
+
+.btn--onInk{ background:transparent; color:var(--cream); border-color:rgba(245,240,228,.34); }
+.btn--onInk::before{ background:var(--cream); }
+.btn--onInk:hover{ color:var(--ink); border-color:var(--cream); }
+
+.btn--wa{ background:var(--wa); color:#0b3d1f; }
+.btn--wa::before{ background:#1FBB59; }
+
+.btn--lg{ padding:19px 38px; font-size:.78rem; }
+.btn--block{ display:flex; width:100%; }
+
+/* ═══ HEADER ══════════════════════════════════════════════════════════════ */
+.header{
+  position:fixed; inset:0 0 auto 0; z-index:120; height:var(--head-h);
+  background:rgba(255,255,255,.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;
+  transition:background .3s ease, border-color .3s ease, box-shadow .3s ease, height .3s ease;
+}
+.header.is-stuck{ background:rgba(255,255,255,.96); border-bottom-color:var(--line-2); box-shadow:0 1px 24px rgba(23,21,15,.06); }
+.headerIn{
+  height:100%; max-width:var(--wrap); margin:0 auto; padding:0 var(--pad);
+  display:flex; align-items:center; gap:26px;
+}
+
+/* Logo */
+.logo{ display:inline-flex; align-items:center; gap:12px; flex-shrink:0; }
+.logoMark{
+  width:42px; height:42px; display:grid; place-items:center; flex-shrink:0;
+  border:1.5px solid var(--brass); border-radius:50%; color:var(--green);
+  transition:background .3s ease, color .3s ease, transform .5s cubic-bezier(.2,.7,.3,1);
+}
+.logoMark svg{ width:21px; height:21px; }
+.logoMark img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
+.logo:hover .logoMark{ background:var(--green); color:var(--cream); transform:rotate(-8deg); }
+.logoTxt{ display:flex; flex-direction:column; line-height:1; }
+.logoName{ font-family:var(--display); font-size:1.6rem; letter-spacing:.05em; color:var(--ink); }
+.logoSub{ font-size:.56rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--brass); margin-top:4px; }
+.footer .logoName, .drawer .logoName{ color:var(--cream); }
+
+/* Atajos de texto */
+.shortcuts{ display:flex; align-items:center; gap:34px; margin-left:auto; }
+.shortcut{
+  position:relative; font-size:.73rem; font-weight:600; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--ink-2); padding:8px 0;
+  transition:color .26s ease;
+}
+.shortcut::after{
+  content:""; position:absolute; left:0; bottom:2px; width:100%; height:1.5px;
+  background:var(--brass); transform:scaleX(0); transform-origin:left;
+  transition:transform .34s cubic-bezier(.2,.7,.3,1);
+}
+.shortcut:hover{ color:var(--brass); }
+.shortcut:hover::after{ transform:scaleX(1); }
+.shortcut.is-active{ color:var(--green); }
+.shortcut.is-active::after{ transform:scaleX(1); background:var(--green); }
+
+.headerCta{ margin-left:8px; }
+
+/* Hamburguesa */
+.hamb{
+  width:46px; height:46px; flex-shrink:0; display:grid; place-items:center; gap:0;
+  background:transparent; border:1.5px solid var(--line); border-radius:var(--r);
+  cursor:pointer; transition:background .28s ease, border-color .28s ease;
+}
+.hamb:hover{ background:var(--ink); border-color:var(--ink); }
+.hambBars{ display:grid; gap:5px; width:19px; }
+.hambBars i{ display:block; height:1.5px; background:var(--ink); transition:background .28s ease, transform .34s ease, opacity .2s ease; }
+.hambBars i:nth-child(2){ width:70%; margin-left:auto; }
+.hamb:hover .hambBars i{ background:var(--cream); }
+.hamb:hover .hambBars i:nth-child(2){ width:100%; }
+
+/* ═══ DRAWER (menú lateral) ═══════════════════════════════════════════════ */
+.scrim{
+  position:fixed; inset:0; z-index:130; background:rgba(23,21,15,.55);
+  opacity:0; visibility:hidden; transition:opacity .4s ease, visibility .4s;
+}
+.scrim.is-open{ opacity:1; visibility:visible; }
+
+.drawer{
+  position:fixed; top:0; right:0; bottom:0; z-index:140; width:min(420px, 88vw);
+  background:var(--ink); color:#C9C3B6; padding:28px 34px 40px;
+  display:flex; flex-direction:column; overflow-y:auto;
+  transform:translateX(102%); visibility:hidden;
+  transition:transform .48s cubic-bezier(.36,.66,.24,1), visibility .48s;
+}
+.drawer.is-open{ transform:translateX(0); visibility:visible; }
+.drawerTop{ display:flex; align-items:center; justify-content:space-between; margin-bottom:44px; }
+.drawer .logoMark{ border-color:var(--brass-2); color:var(--brass-2); }
+.drawerClose{
+  width:44px; height:44px; display:grid; place-items:center; color:var(--cream);
+  background:transparent; border:1.5px solid rgba(245,240,228,.24); border-radius:var(--r);
+  cursor:pointer; transition:background .28s ease, transform .4s ease, border-color .28s;
+}
+.drawerClose:hover{ background:rgba(245,240,228,.12); border-color:var(--cream); transform:rotate(90deg); }
+
+.drawerNav{ display:flex; flex-direction:column; }
+.drawerNav a{
+  display:flex; align-items:baseline; gap:16px; padding:17px 0;
+  border-bottom:1px solid rgba(245,240,228,.1);
+  font-family:var(--display); font-size:1.85rem; letter-spacing:.045em; color:var(--cream);
+  transition:color .28s ease, padding-left .34s cubic-bezier(.2,.7,.3,1);
+}
+.drawerNav a span{ font-family:var(--sans); font-size:.6rem; font-weight:600; letter-spacing:.2em; color:var(--brass-2); }
+.drawerNav a:hover{ color:var(--brass-2); padding-left:12px; }
+
+.drawerCta{ display:grid; gap:12px; margin:34px 0 30px; }
+.drawerMeta{ margin-top:auto; font-size:.84rem; line-height:1.9; border-top:1px solid rgba(245,240,228,.12); padding-top:24px; }
+.drawerMeta b{ display:block; color:var(--cream); font-weight:600; letter-spacing:.02em; }
+.drawerMeta a:hover{ color:var(--brass-2); }
+
+/* ═══ CARRUSEL ════════════════════════════════════════════════════════════ */
+.hero{ position:relative; margin-top:var(--head-h); background:var(--ink); overflow:hidden; }
+.slides{ position:relative; height:clamp(520px, 78vh, 760px); }
+
+.slide{
+  position:absolute; inset:0; margin:0; opacity:0; visibility:hidden;
+  transition:opacity 1s ease, visibility 1s;
+}
+.slide.is-active{ opacity:1; visibility:visible; }
+.slideBg{
+  position:absolute; inset:0;
+  background-image:var(--img, var(--ph));
+  background-size:cover; background-position:center;
+  transform:scale(1.06);
+  transition:transform 8s ease-out;
+}
+.slide.is-active .slideBg{ transform:scale(1); }
+.slideBg::after{
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(100deg, rgba(23,21,15,.86) 0%, rgba(23,21,15,.62) 44%, rgba(23,21,15,.2) 78%),
+    linear-gradient(to top, rgba(23,21,15,.6), rgba(23,21,15,0) 45%);
+}
+
+.slideIn{
+  position:relative; z-index:2; height:100%;
+  max-width:var(--wrap); margin:0 auto; padding:0 var(--pad) 132px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+}
+.slideCopy{ max-width:660px; }
+.slideCopy > *{ opacity:0; transform:translateY(24px); }
+.slide.is-active .slideCopy > *{ animation:slideUp .9s cubic-bezier(.2,.7,.3,1) forwards; }
+.slide.is-active .slideCopy > *:nth-child(1){ animation-delay:.12s; }
+.slide.is-active .slideCopy > *:nth-child(2){ animation-delay:.22s; }
+.slide.is-active .slideCopy > *:nth-child(3){ animation-delay:.32s; }
+.slide.is-active .slideCopy > *:nth-child(4){ animation-delay:.42s; }
+@keyframes slideUp{ to{ opacity:1; transform:none; } }
+
+.slideEyebrow{
+  display:inline-flex; align-items:center; gap:11px; margin-bottom:18px;
+  font-size:.66rem; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:var(--brass-2);
+}
+.slideEyebrow::before{ content:""; width:30px; height:1px; background:var(--brass-2); }
+.slideTitle{ font-size:clamp(2.9rem, 7.4vw, 5.4rem); color:#fff; line-height:.9; }
+.slideTitle em{ font-style:normal; color:var(--brass-2); }
+.slideText{ margin-top:22px; max-width:48ch; color:#D6D1C6; font-size:1.03rem; line-height:1.75; }
+.slideBtns{ display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; }
+
+/* Controles */
+.heroCtl{
+  position:absolute; left:0; right:0; bottom:0; z-index:3;
+  max-width:var(--wrap); margin:0 auto; padding:0 var(--pad) 34px;
+  display:flex; align-items:flex-end; justify-content:space-between; gap:20px;
+}
+.dots{ display:flex; gap:26px; }
+.dot{
+  position:relative; background:none; border:0; padding:0 0 12px; cursor:pointer;
+  font-family:var(--display); font-size:1.05rem; letter-spacing:.08em;
+  color:rgba(245,240,228,.42); transition:color .3s ease;
+}
+.dot::before{ content:""; position:absolute; left:0; bottom:0; width:100%; height:1.5px; background:rgba(245,240,228,.22); }
+.dot::after{
+  content:""; position:absolute; left:0; bottom:0; width:100%; height:1.5px;
+  background:var(--brass-2); transform:scaleX(0); transform-origin:left;
+}
+.dot:hover{ color:var(--cream); }
+.dot.is-active{ color:var(--cream); }
+.dot.is-active::after{ animation:dotFill var(--dur,7s) linear forwards; }
+.dot.is-active.no-auto::after{ animation:none; transform:scaleX(1); }
+@keyframes dotFill{ from{ transform:scaleX(0);} to{ transform:scaleX(1);} }
+
+.arrows{ display:flex; gap:10px; }
+.arrow{
+  width:52px; height:52px; display:grid; place-items:center; cursor:pointer;
+  background:rgba(245,240,228,.08); border:1.5px solid rgba(245,240,228,.26); border-radius:var(--r);
+  color:var(--cream); transition:background .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
+}
+.arrow:hover{ background:var(--cream); color:var(--ink); border-color:var(--cream); }
+.arrow:first-child:hover{ transform:translateX(-3px); }
+.arrow:last-child:hover{ transform:translateX(3px); }
+.arrow svg{ width:19px; height:19px; }
+
+/* Marcador de foto */
+.phNote{
+  position:absolute; z-index:2; left:16px; top:16px;
+  font-size:.58rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--brass); background:rgba(255,255,255,.86); padding:7px 12px; border-radius:2px;
+  pointer-events:none;
+}
+.slide .phNote{ left:auto; right:22px; top:22px; }
+
+/* ═══ FRANJA DE DATOS ═════════════════════════════════════════════════════ */
+.strip{ background:var(--cream); border-bottom:1px solid var(--line-2); }
+.stripIn{ display:grid; grid-template-columns:repeat(4,1fr); }
+.stripItem{ padding:38px 24px; text-align:center; border-right:1px solid var(--line-2); }
+.stripItem:last-child{ border-right:0; }
+.stripNum{ font-family:var(--display); font-size:2.9rem; color:var(--green); line-height:1; letter-spacing:.02em; }
+.stripLabel{ font-size:.68rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-top:10px; }
+
+/* ═══ SERVICIOS ═══════════════════════════════════════════════════════════ */
+.grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
+
+.card{
+  display:flex; flex-direction:column; height:100%; background:var(--paper);
+  border:1px solid var(--line-2); border-radius:var(--r); overflow:hidden;
+  transition:transform .42s cubic-bezier(.2,.7,.3,1), box-shadow .42s ease, border-color .42s ease;
+}
+.card:hover{ transform:translateY(-8px); box-shadow:var(--sh); border-color:var(--brass); }
+.cardMedia{ position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--cream-2); }
+.cardImg{
+  position:absolute; inset:0;
+  background-image:var(--img, var(--ph)); background-size:cover; background-position:center;
+  transform:scale(1); transition:transform .8s cubic-bezier(.2,.7,.3,1);
+}
+.card:hover .cardImg{ transform:scale(1.07); }
+.cardTag{
+  position:absolute; z-index:2; left:0; bottom:0;
+  background:var(--paper); color:var(--green); padding:10px 16px;
+  font-size:.6rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+}
+.cardBody{ display:flex; flex-direction:column; flex:1; padding:28px 26px 26px; }
+.cardBody h3{ font-size:1.62rem; letter-spacing:.03em; }
+.cardBody p{ margin-top:12px; font-size:.94rem; line-height:1.72; }
+.cardLink{
+  display:inline-flex; align-items:center; gap:9px; margin-top:auto; padding-top:22px;
+  font-size:.68rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--brass);
+  transition:color .28s ease, gap .28s ease;
+}
+.cardLink svg{ width:15px; height:15px; transition:transform .34s cubic-bezier(.2,.7,.3,1); }
+.card:hover .cardLink{ color:var(--green); }
+.card:hover .cardLink svg{ transform:translateX(6px); }
+
+/* ═══ QUIÉNES SOMOS ═══════════════════════════════════════════════════════ */
+.split{ display:grid; grid-template-columns:1fr 1.05fr; gap:72px; align-items:center; }
+
+.frame{ position:relative; }
+.frame::before{
+  content:""; position:absolute; inset:20px -20px -20px 20px;
+  border:1px solid var(--brass); z-index:0; pointer-events:none;
+  transition:inset .5s cubic-bezier(.2,.7,.3,1);
+}
+.frame:hover::before{ inset:14px -14px -14px 14px; }
+.frameImg{
+  position:relative; z-index:1; aspect-ratio:4/3; overflow:hidden; background:var(--cream-2);
+  background-image:var(--img, var(--ph)); background-size:cover; background-position:center;
+  box-shadow:var(--sh);
+}
+
+.pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+.pill{
+  display:inline-flex; align-items:center; gap:9px; padding:11px 17px;
+  background:var(--paper); border:1px solid var(--line); border-radius:999px;
+  font-size:.74rem; font-weight:500; color:var(--ink-2);
+  transition:border-color .3s ease, background .3s ease, transform .3s ease;
+}
+.pill svg{ width:15px; height:15px; color:var(--green); }
+.pill:hover{ border-color:var(--green); background:var(--green-soft); transform:translateY(-2px); }
+
+.team{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; margin-top:78px; }
+.member{ text-align:left; }
+.memberImg{
+  position:relative; aspect-ratio:4/5; overflow:hidden; background:var(--cream-2);
+  background-image:var(--img, var(--ph)); background-size:cover; background-position:center;
+  filter:saturate(.55); transition:filter .5s ease, transform .5s cubic-bezier(.2,.7,.3,1);
+}
+.member:hover .memberImg{ filter:saturate(1); transform:translateY(-6px); }
+.memberName{ font-size:1.42rem; letter-spacing:.035em; margin-top:20px; }
+.memberRole{ font-size:.66rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--brass); margin-top:7px; }
+.memberNote{ font-size:.88rem; margin-top:10px; line-height:1.65; }
+
+/* ═══ EXPERIENCIA ═════════════════════════════════════════════════════════ */
+.expGrid{ display:grid; grid-template-columns:1.1fr 1fr; gap:72px; align-items:center; }
+
+.timeline{ margin-top:36px; border-top:1px solid rgba(245,240,228,.14); }
+.tItem{
+  display:grid; grid-template-columns:78px 1fr; gap:22px; align-items:baseline;
+  padding:22px 0; border-bottom:1px solid rgba(245,240,228,.14);
+  transition:padding-left .4s cubic-bezier(.2,.7,.3,1);
+}
+.tItem:hover{ padding-left:12px; }
+.tYear{ font-family:var(--display); font-size:1.5rem; color:var(--brass-2); letter-spacing:.05em; }
+.tItem b{ display:block; color:var(--cream); font-weight:600; font-size:.98rem; letter-spacing:.01em; }
+.tItem span{ display:block; font-size:.9rem; color:#A9A296; margin-top:5px; line-height:1.65; }
+
+/* Video de presentación */
+.videoBox{
+  position:relative; z-index:1; aspect-ratio:16/9; overflow:hidden;
+  background-color:var(--cream-2); background-image:var(--ph);
+  background-size:cover; background-position:center; box-shadow:var(--sh);
+}
+.videoBox iframe, .videoBox video{
+  position:absolute; inset:0; width:100%; height:100%; border:0; display:block; object-fit:cover; background:#000;
+}
+.videoPh{
+  position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center; padding:26px; gap:6px;
+}
+.videoPlay{
+  width:66px; height:66px; display:grid; place-items:center; margin-bottom:14px;
+  border:1.5px solid var(--brass); border-radius:50%; color:var(--green);
+  transition:background .35s ease, color .35s ease, transform .45s cubic-bezier(.2,.7,.3,1);
+}
+.videoPlay svg{ width:22px; height:22px; margin-left:3px; }
+.frame:hover .videoPlay{ background:var(--green); color:var(--cream); transform:scale(1.06); }
+.videoPhTitle{ font-family:var(--display); font-size:1.35rem; letter-spacing:.05em; color:var(--ink); }
+.videoPhHint{ font-size:.72rem; color:var(--muted); line-height:1.6; max-width:34ch; }
+
+/* Sello giratorio */
+.sealWrap{ position:relative; }
+.seal{
+  position:absolute; right:-26px; bottom:-26px; z-index:3;
+  width:132px; height:132px; display:grid; place-items:center;
+  background:var(--cream); border-radius:50%; box-shadow:var(--sh);
+}
+.sealSpin{ position:absolute; inset:0; animation:spin 26s linear infinite; }
+.sealSpin text{ font-family:var(--sans); font-size:8.6px; font-weight:600; letter-spacing:.26em; fill:var(--brass); text-transform:uppercase; }
+.sealCore{ font-family:var(--display); font-size:1.25rem; color:var(--green); line-height:.95; text-align:center; letter-spacing:.04em; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+.steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:80px; border-top:1px solid rgba(245,240,228,.16); }
+.step{ padding:32px 26px 30px; border-right:1px solid rgba(245,240,228,.16); transition:background .35s ease; }
+.step:last-child{ border-right:0; }
+.step:hover{ background:rgba(245,240,228,.05); }
+.stepNum{ font-family:var(--display); font-size:2.6rem; color:var(--brass-2); line-height:1; }
+.step h3{ font-size:1.32rem; color:var(--cream); margin-top:14px; letter-spacing:.035em; }
+.step p{ font-size:.9rem; color:#A9A296; margin-top:10px; line-height:1.68; }
+.stepTime{ display:inline-block; margin-top:16px; font-size:.62rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--brass-2); }
+
+/* ═══ CONTACTO ════════════════════════════════════════════════════════════ */
+.contactGrid{ display:grid; grid-template-columns:1.08fr .92fr; gap:52px; align-items:start; }
+
+.formCard{ background:var(--paper); border:1px solid var(--line-2); padding:44px 42px; box-shadow:var(--sh-sm); border-radius:var(--r); }
+.formCard h3{ font-size:2rem; letter-spacing:.035em; }
+.formCard > p{ font-size:.92rem; margin-top:10px; }
+.form{ margin-top:30px; display:grid; gap:20px; }
+.row2{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.field{ display:flex; flex-direction:column; gap:9px; }
+.field label{ font-size:.64rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); }
+.field input, .field select, .field textarea{
+  font-family:var(--sans); font-size:.95rem; color:var(--ink);
+  padding:15px 16px; background:var(--cream); border:1.5px solid transparent; border-radius:var(--r);
+  transition:border-color .28s ease, background .28s ease, box-shadow .28s ease;
+  width:100%;
+}
+.field textarea{ min-height:132px; resize:vertical; line-height:1.65; }
+.field input::placeholder, .field textarea::placeholder{ color:var(--muted); }
+.field input:hover, .field select:hover, .field textarea:hover{ background:var(--cream-2); }
+.field input:focus, .field select:focus, .field textarea:focus{
+  outline:none; background:var(--paper); border-color:var(--green); box-shadow:0 0 0 4px rgba(38,70,60,.09);
+}
+.field.has-error input, .field.has-error textarea{ border-color:#B4442F; background:#FCF2F0; }
+.err{ font-size:.76rem; color:#B4442F; display:none; }
+.field.has-error .err{ display:block; }
+.formNote{ font-size:.76rem; color:var(--muted); line-height:1.6; text-align:center; }
+.formOk{
+  display:none; gap:14px; align-items:flex-start; margin-top:20px; padding:20px 22px;
+  background:var(--green-soft); border-left:3px solid var(--green); font-size:.92rem; color:var(--green-2);
+}
+.formOk.is-on{ display:flex; }
+.formOk svg{ width:20px; height:20px; flex-shrink:0; color:var(--green); margin-top:2px; }
+
+.infoList{ display:grid; gap:2px; background:var(--line-2); border:1px solid var(--line-2); border-radius:var(--r); overflow:hidden; }
+.infoItem{ display:flex; gap:18px; padding:24px 26px; background:var(--paper); transition:background .3s ease; }
+.infoItem:hover{ background:var(--cream); }
+.infoIc{ width:42px; height:42px; flex-shrink:0; display:grid; place-items:center; border:1px solid var(--line); border-radius:50%; color:var(--green); }
+.infoIc svg{ width:18px; height:18px; }
+.infoItem b{ display:block; font-size:.64rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--brass); margin-bottom:7px; }
+.infoItem p{ font-size:.96rem; color:var(--ink-2); line-height:1.6; }
+.infoItem a:hover{ color:var(--green); text-decoration:underline; text-underline-offset:3px; }
+.hours{ display:flex; justify-content:space-between; gap:16px; font-size:.9rem; padding:5px 0; border-bottom:1px dashed var(--line-2); }
+.hours:last-child{ border-bottom:0; }
+.hours span:last-child{ color:var(--ink-2); font-weight:500; }
+.hours.off span:last-child{ color:var(--muted); font-weight:400; }
+
+.map{ margin-top:26px; aspect-ratio:16/10; border:1px solid var(--line-2); border-radius:var(--r); overflow:hidden; }
+.map iframe{ width:100%; height:100%; border:0; filter:grayscale(1) contrast(.94); transition:filter .5s ease; }
+.map:hover iframe{ filter:grayscale(0) contrast(1); }
+
+/* ═══ FOOTER ══════════════════════════════════════════════════════════════ */
+.footer{ background:var(--ink); color:#A9A296; padding:88px 0 30px; }
+.footTop{ display:grid; grid-template-columns:1.5fr 1fr 1fr 1.15fr; gap:52px; padding-bottom:54px; border-bottom:1px solid rgba(245,240,228,.12); }
+.footer .logoMark{ border-color:var(--brass-2); color:var(--brass-2); }
+.footer .logo:hover .logoMark{ background:var(--brass-2); color:var(--ink); }
+.footAbout{ font-size:.9rem; line-height:1.8; margin-top:22px; max-width:38ch; }
+.social{ display:flex; gap:11px; margin-top:26px; }
+.social a{
+  width:44px; height:44px; display:grid; place-items:center; color:var(--cream);
+  border:1px solid rgba(245,240,228,.22); border-radius:50%;
+  transition:background .3s ease, color .3s ease, transform .3s ease, border-color .3s ease;
+}
+.social a svg{ width:18px; height:18px; }
+.social a:hover{ background:var(--brass-2); color:var(--ink); border-color:var(--brass-2); transform:translateY(-4px); }
+
+.footTitle{ font-family:var(--display); font-size:1.24rem; letter-spacing:.09em; color:var(--cream); margin-bottom:20px; }
+.footNav{ display:flex; flex-direction:column; gap:12px; }
+.footNav a{ font-size:.9rem; transition:color .28s ease, padding-left .32s cubic-bezier(.2,.7,.3,1); }
+.footNav a:hover{ color:var(--brass-2); padding-left:9px; }
+.footData{ font-size:.9rem; line-height:1.9; }
+.footData b{ color:var(--cream); font-weight:600; }
+.footData a:hover{ color:var(--brass-2); }
+.footBottom{
+  display:flex; flex-wrap:wrap; gap:14px 30px; justify-content:space-between;
+  padding-top:26px; font-size:.78rem; color:#7C766B;
+}
+.footBottom a:hover{ color:var(--brass-2); }
+
+/* ═══ DOCK FLOTANTE ═══════════════════════════════════════════════════════ */
+.fabDock{
+  position:fixed; right:24px; bottom:24px; z-index:110;
+  display:flex; flex-direction:column; align-items:flex-end; gap:12px;
+}
+.fabBtn{
+  display:inline-flex; align-items:center; justify-content:center; gap:11px;
+  border-radius:999px; color:#fff; line-height:1;
+  font-size:.72rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+  box-shadow:0 10px 26px -12px rgba(23,21,15,.42);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease, background-color .35s ease;
+}
+.fabBtn:hover{ transform:translateY(-3px); box-shadow:0 16px 32px -14px rgba(23,21,15,.5); }
+.fabBtn svg{ width:19px; height:19px; }
+.fabWa{ width:56px; height:56px; background:var(--wa); color:#0B3D1F; }
+.fabWa:hover{ background:#1FBB59; }
+.fabCita{ padding:18px 26px; background:var(--green); color:var(--cream); }
+.fabCita:hover{ background:var(--green-2); }
+
+/* ═══ REVEAL ══════════════════════════════════════════════════════════════ */
+.reveal{ opacity:0; transform:translateY(30px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.3,1); }
+.reveal.is-in{ opacity:1; transform:none; }
+
+/* ═══ RESPONSIVE ══════════════════════════════════════════════════════════ */
+@media (max-width:1080px){
+  .grid3{ grid-template-columns:repeat(2,1fr); }
+  .team{ grid-template-columns:repeat(2,1fr); gap:30px; }
+  .split, .expGrid, .contactGrid{ grid-template-columns:1fr; gap:52px; }
+  .steps{ grid-template-columns:repeat(2,1fr); }
+  .splitMedia, .sealWrap{ padding:0 26px 26px 0; }
+  .step:nth-child(2){ border-right:0; }
+  .step:nth-child(1), .step:nth-child(2){ border-bottom:1px solid rgba(245,240,228,.16); }
+}
+
+/* Móvil: solo logo + hamburguesa en el header */
+@media (max-width:900px){
+  .shortcuts, .headerCta{ display:none; }
+  .hamb{ margin-left:auto; }
+  :root{ --head-h:70px; }
+  .sec{ padding:76px 0; }
+  .stripIn{ grid-template-columns:repeat(2,1fr); }
+  .stripItem{ border-bottom:1px solid var(--line-2); padding:30px 16px; }
+  .stripItem:nth-child(2n){ border-right:0; }
+  .stripItem:nth-child(n+3){ border-bottom:0; }
+}
+
+@media (max-width:720px){
+  :root{ --pad:20px; }
+  .slides{ height:min(78vh, 620px); }
+  .slideIn{ padding-bottom:150px; }
+  .slideBtns{ gap:10px; }
+  .btn{ padding:15px 24px; font-size:.7rem; }
+  .btn--lg{ padding:16px 26px; font-size:.72rem; }
+  .heroCtl{ flex-direction:column; align-items:flex-start; gap:18px; padding-bottom:26px; }
+  .dots{ gap:18px; }
+  .arrow{ width:46px; height:46px; }
+  .grid3{ grid-template-columns:1fr; gap:24px; }
+  .team{ grid-template-columns:1fr 1fr; gap:20px; }
+  .steps{ grid-template-columns:1fr; }
+  .step{ border-right:0; border-bottom:1px solid rgba(245,240,228,.16); }
+  .step:last-child{ border-bottom:0; }
+  .formCard{ padding:32px 24px; }
+  .row2{ grid-template-columns:1fr; }
+  .footTop{ grid-template-columns:1fr; gap:40px; }
+  .seal{ width:104px; height:104px; right:-8px; bottom:-16px; }
+  .fabDock{ right:14px; bottom:14px; gap:10px; }
+  .fabCita{ padding:16px 20px; font-size:.66rem; }
+  .fabWa{ width:50px; height:50px; }
+  .splitMedia, .sealWrap{ padding:0 18px 18px 0; }
+  .frame::before{ inset:14px -14px -14px 14px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  html{ scroll-behavior:auto; }
+  .reveal{ opacity:1; transform:none; }
+  .slide.is-active .slideCopy > *{ opacity:1; transform:none; }
+  .slideBg{ transform:none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Ir al contenido</a>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header class="header" id="header">
+  <div class="headerIn">
+
+    <a class="logo" href="#top" aria-label="Conciliando — inicio">
+      <span class="logoMark" aria-hidden="true"><img src="img/logoconciliando.jpg" alt="" /></span>
+      <span class="logoTxt">
+        <span class="logoName">Conciliando</span>
+        <span class="logoSub">Centro de conciliación</span>
+      </span>
+    </a>
+
+    <nav class="shortcuts" aria-label="Atajos de la página">
+      <a class="shortcut" href="#servicios">Servicios</a>
+      <a class="shortcut" href="#nosotros">Quiénes somos</a>
+      <a class="shortcut" href="#experiencia">Experiencia</a>
+      <a class="shortcut" href="#contacto">Contacto</a>
+    </nav>
+
+    <a class="btn btn--solid headerCta" href="#contacto">Reservar cita</a>
+
+    <button class="hamb" id="hambBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
+      <span class="hambBars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- ══════════════════ MENÚ LATERAL ══════════════════ -->
+<div class="scrim" id="scrim" hidden></div>
+
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menú de navegación">
+  <div class="drawerTop">
+    <span class="logo">
+      <span class="logoMark" aria-hidden="true"><img src="img/logoconciliando.jpg" alt="" /></span>
+      <span class="logoTxt">
+        <span class="logoName">Conciliando</span>
+        <span class="logoSub">Centro de conciliación</span>
+      </span>
+    </span>
+    <button class="drawerClose" id="drawerClose" aria-label="Cerrar menú">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <nav class="drawerNav" aria-label="Secciones">
+    <a href="#servicios"><span>01</span> Servicios</a>
+    <a href="#nosotros"><span>02</span> Quiénes somos</a>
+    <a href="#experiencia"><span>03</span> Experiencia</a>
+    <a href="#contacto"><span>04</span> Contacto</a>
+  </nav>
+
+  <div class="drawerCta">
+    <a class="btn btn--light btn--block" href="#contacto">Reservar cita</a>
+    <a class="btn btn--onInk btn--block" href="https://wa.me/51936635469?text=Hola%2C%20quiero%20consultar%20sobre%20una%20conciliaci%C3%B3n." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+  </div>
+
+  <div class="drawerMeta">
+    <b>Av. San Luis 2076, Of. 305</b>
+    San Borja, Lima<br>
+    Lunes a viernes · 9:00 – 17:00<br>
+    <a href="tel:+51936635469">936 635 469</a><br>
+    <a href="mailto:consultas@conciliando.com.pe">consultas@conciliando.com.pe</a>
+  </div>
+</aside>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ══════════════════ CARRUSEL ══════════════════ -->
+<section class="hero" aria-label="Presentación del centro" aria-roledescription="carrusel">
+  <div class="slides" id="slides">
+
+    <figure class="slide is-active" aria-roledescription="diapositiva" aria-label="1 de 4">
+      <div class="slideBg" style="--img:url('img/Conciliadores.jpg')"></div>      
+      <div class="slideIn">
+        <div class="slideCopy">
+          <span class="slideEyebrow">Centro autorizado por el MINJUS</span>
+          <h1 class="slideTitle">Resuelve tu conflicto <em>sin ir a juicio</em></h1>
+          <p class="slideText">Conciliadores acreditados y un acuerdo con valor legal en semanas, no en años.</p>
+        </div>
+      </div>
+    </figure>
+
+    <figure class="slide" aria-roledescription="diapositiva" aria-label="2 de 4">
+      <div class="slideBg" style="--img:url('img/Pension.jpg')"></div>      
+      <div class="slideIn">
+        <div class="slideCopy">
+          <span class="slideEyebrow">Conciliación familiar</span>
+          <h2 class="slideTitle">Acuerdos de familia <em>que sí se cumplen</em></h2>
+          <p class="slideText">Pensión de alimentos, tenencia y régimen de visitas, por escrito y con respaldo legal.</p>
+        </div>
+      </div>
+    </figure>
+
+    <figure class="slide" aria-roledescription="diapositiva" aria-label="3 de 4">
+      <div class="slideBg" style="--img:url('img/Desalojos.jpg')"></div>      
+      <div class="slideIn">
+        <div class="slideCopy">
+          <span class="slideEyebrow">Civil y comercial</span>
+          <h2 class="slideTitle">Cobra tu deuda o <em>recupera tu inmueble</em></h2>
+          <p class="slideText">Desalojos, contratos e indemnizaciones con un cronograma que se puede ejecutar ante el juez.</p>
+        </div>
+      </div>
+    </figure>
+
+    <figure class="slide" aria-roledescription="diapositiva" aria-label="4 de 4">
+      <div class="slideBg" style="--img:url('img/Atendemos.jpg')"></div>      
+      <div class="slideIn">
+        <div class="slideCopy">
+          <span class="slideEyebrow">San Borja, Lima</span>
+          <h2 class="slideTitle">Presencial o <em>por videollamada</em></h2>
+          <p class="slideText">Atendemos en oficina y en línea, con horarios fuera de la jornada si vives en provincia o en el extranjero.</p>
+        </div>
+      </div>
+    </figure>
+
+  </div>
+
+  <div class="heroCtl">
+    <div class="dots" id="dots" role="tablist" aria-label="Elegir diapositiva">
+      <button class="dot is-active" type="button" role="tab" aria-selected="true" data-i="0">01</button>
+      <button class="dot" type="button" role="tab" aria-selected="false" data-i="1">02</button>
+      <button class="dot" type="button" role="tab" aria-selected="false" data-i="2">03</button>
+      <button class="dot" type="button" role="tab" aria-selected="false" data-i="3">04</button>
+    </div>
+    <div class="arrows">
+      <button class="arrow" id="prevBtn" type="button" aria-label="Diapositiva anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="arrow" id="nextBtn" type="button" aria-label="Siguiente diapositiva">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FRANJA DE DATOS ══════════════════ -->
+<section class="strip" aria-label="Cifras del centro">
+  <div class="wrap">
+    <div class="stripIn">
+      <div class="stripItem"><div class="stripNum">+1,000</div><div class="stripLabel">Conciliaciones</div></div>
+      <div class="stripItem"><div class="stripNum">8 años</div><div class="stripLabel">De experiencia</div></div>
+      <div class="stripItem"><div class="stripNum">92%</div><div class="stripLabel">Cierran con acuerdo</div></div>
+      <div class="stripItem"><div class="stripNum">4.9</div><div class="stripLabel">Valoración de clientes</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 01 · SERVICIOS ══════════════════ -->
+<section class="sec" id="servicios">
+  <div class="wrap">
+    <div class="secHead secHead--center reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2 class="title">Si tu problema está aquí, se puede conciliar</h2>
+      <p class="lead">Estos son los casos que resolvemos con más frecuencia. Si el tuyo no aparece, escríbenos: te decimos en minutos si es conciliable.</p>
+    </div>
+
+    <div class="grid3">
+
+      <a class="card reveal" href="#contacto">
+        <div class="cardMedia">
+          <div class="cardImg" style="--img:url('img/familia-pension.jpg')"></div>  
+          <span class="cardTag">Familia</span>
+        </div>
+        <div class="cardBody">
+          <h3>Pensión de alimentos</h3>
+          <p>Fijar, aumentar, reducir o exonerar la pensión de un hijo o del conviviente, con un monto y una fecha de pago claros.</p>
+          <span class="cardLink">Reservar cita
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card reveal" href="#contacto">
+        <div class="cardMedia">
+          <div class="cardImg" style="--img:url('img/familia-tenencia.jpg')"></div>  
+          <span class="cardTag">Familia</span>
+        </div>
+        <div class="cardBody">
+          <h3>Tenencia y visitas</h3>
+          <p>Con quién vive el menor, días, horarios, feriados y vacaciones. Todo por escrito, sin renegociar cada mes.</p>
+          <span class="cardLink">Reservar cita
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card reveal" href="#contacto">
+        <div class="cardMedia">
+          <div class="cardImg" style="--img:url('img/civil-desalojos.jpg')"></div>  
+          <span class="cardTag">Civil</span>
+        </div>
+        <div class="cardBody">
+          <h3>Desalojos</h3>
+          <p>Recupera tu inmueble por vencimiento de contrato o falta de pago, con una fecha de entrega acordada y exigible.</p>
+          <span class="cardLink">Reservar cita
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card reveal" href="#contacto">
+        <div class="cardMedia">
+          <div class="cardImg" style="--img:url('img/comercial-deudas.jpg')"></div>  
+          <span class="cardTag">Comercial</span>
+        </div>
+        <div class="cardBody">
+          <h3>Deudas y cobranzas</h3>
+          <p>Obligación de dar suma de dinero con un cronograma de pagos que se cumple, y si no, se ejecuta ante el juez.</p>
+          <span class="cardLink">Reservar cita
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card reveal" href="#contacto">
+        <div class="cardMedia">
+          <div class="cardImg" style="--img:url('img/comercial-contratos.jpg')"></div>  
+          <span class="cardTag">Comercial</span>
+        </div>
+        <div class="cardBody">
+          <h3>Contratos e indemnizaciones</h3>
+          <p>Incumplimiento, resolución de contrato, escritura pública y daños por obras o servicios mal ejecutados.</p>
+          <span class="cardLink">Reservar cita
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card reveal" href="#contacto">
+        <div class="cardMedia">
+          <div class="cardImg" style="--img:url('img/conflicto-vecinal.jpg')"></div>  
+          <span class="cardTag">Vecinal</span>
+        </div>
+        <div class="cardBody">
+          <h3>Conflictos vecinales</h3>
+          <p>Ruidos, filtraciones, linderos, áreas comunes y cuotas de mantenimiento, resueltos sin romper la convivencia.</p>
+          <span class="cardLink">Reservar cita
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 02 · QUIÉNES SOMOS ══════════════════ -->
+<section class="sec sec--cream" id="nosotros">
+  <div class="wrap">
+
+    <div class="split">
+      <div class="reveal">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2 class="title">Un equipo dedicado a que las personas lleguen a acuerdos</h2>
+        <p class="lead">
+          Somos un centro de conciliación extrajudicial con sede en San Borja. Nacimos
+          con una idea simple: la mayoría de conflictos no necesita un juez, necesita un
+          espacio ordenado para conversar. Desde entonces acompañamos a familias,
+          arrendadores, empresas y vecinos a cerrar acuerdos que se cumplen.
+        </p>
+
+        <div class="pills">
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Conciliadores acreditados</span>
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Salas privadas por parte</span>
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Trato confidencial</span>
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Respuesta el mismo día hábil</span>
+        </div>
+
+        <a class="btn btn--line btn--lg" style="margin-top:34px" href="#contacto">Conversar con el equipo</a>
+      </div>
+
+      <div class="splitMedia reveal">
+        <div class="frame">
+          <div class="frameImg" style="--img:url('img/equipo-de-oficina.jpg')"></div>             
+          <span class="phNote">Foto — Equipo en la oficina</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team">
+      <article class="member reveal">
+        <div class="memberImg" style="--img:url('img/Directora-del-centro.jpg')"></div> 
+        <h3 class="memberName">Nombre Apellido</h3>
+        <p class="memberRole">Directora del centro</p>
+        <p class="memberNote">Conciliadora acreditada con especialización en familia.</p>
+      </article>
+      <article class="member reveal">
+        <div class="memberImg" style="--img:url('img/conciliador-civil.jpg')"></div> 
+        <h3 class="memberName">Nombre Apellido</h3>
+        <p class="memberRole">Conciliador civil</p>
+        <p class="memberNote">Desalojos, contratos y obligaciones de dar suma de dinero.</p>
+      </article>
+      <article class="member reveal">
+        <div class="memberImg" style="--img:url('img/conciliadora-familia.jpg')"></div> 
+        <h3 class="memberName">Nombre Apellido</h3>
+        <p class="memberRole">Conciliadora de familia</p>
+        <p class="memberNote">Alimentos, tenencia y régimen de visitas.</p>
+      </article>
+      <article class="member reveal">
+        <div class="memberImg" style="--img:url('img/coordinación-de-audiencias.jpg')"></div> 
+        <h3 class="memberName">Nombre Apellido</h3>
+        <p class="memberRole">Coordinación de audiencias</p>
+        <p class="memberNote">Programación, notificaciones y entrega de actas.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ 03 · EXPERIENCIA ══════════════════ -->
+<section class="sec sec--ink" id="experiencia">
+  <div class="wrap">
+
+    <div class="expGrid">
+      <div class="reveal">
+        <span class="eyebrow">Experiencia</span>
+        <h2 class="title">Ocho años cerrando acuerdos en Lima</h2>
+        <p class="lead">
+          Más de mil audiencias nos enseñaron algo concreto: los acuerdos se cumplen
+          cuando están bien redactados y cuando ambas partes sintieron que fueron
+          escuchadas. En eso trabajamos cada caso.
+        </p>
+
+        <div class="timeline">
+          <div class="tItem">
+            <span class="tYear">2018</span>
+            <div><b>Autorización del Ministerio de Justicia</b><span>El centro abre en San Borja con tres conciliadores acreditados.</span></div>
+          </div>
+          <div class="tItem">
+            <span class="tYear">2020</span>
+            <div><b>Audiencias por videollamada</b><span>Atención a peruanos en provincia y en el extranjero, sin viajar a Lima.</span></div>
+          </div>
+          <div class="tItem">
+            <span class="tYear">2022</span>
+            <div><b>Especialización por materia</b><span>Equipos separados para familia, civil y comercial.</span></div>
+          </div>
+          <div class="tItem">
+            <span class="tYear">2026</span>
+            <div><b>Más de 1,000 casos atendidos</b><span>92% cerrados con acuerdo firmado y con valor legal.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal sealWrap">
+        <div class="frame">
+
+          <!-- ▼▼ VIDEO: pega tu enlace dentro de data-video="" (YouTube, Vimeo o .mp4) ▼▼ -->
+          <div class="videoBox" id="videoBox" data-video="img/videoConciliando.mp4">
+            <div class="videoPh">
+              <span class="videoPlay" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
+              </span>
+              <p class="videoPhTitle">Video de presentación</p>
+              <p class="videoPhHint">Pega el enlace del video en <b>data-video=""</b> y aparece aquí.</p>
+            </div>
+          </div>
+          <!-- ▲▲ ------------------------------------------------------------ ▲▲ -->
+
+        </div>
+
+        <div class="seal" aria-hidden="true">
+          <svg class="sealSpin" viewBox="0 0 132 132">
+            <defs><path id="sealPath" d="M66,66 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs>
+            <text><textPath href="#sealPath" startOffset="0">Conciliación extrajudicial · Autorizado por el MINJUS · </textPath></text>
+          </svg>
+          <span class="sealCore">Acta<br>con valor<br>legal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="stepNum">01</div>
+        <h3>Solicita tu cita</h3>
+        <p>Nos cuentas qué pasó, revisamos si el caso es conciliable y redactamos la solicitud por ti.</p>
+        <span class="stepTime">El mismo día</span>
+      </div>
+      <div class="step reveal">
+        <div class="stepNum">02</div>
+        <h3>Invitamos a la otra parte</h3>
+        <p>El centro notifica la invitación en su domicilio y fija fecha y hora de audiencia.</p>
+        <span class="stepTime">2 a 5 días hábiles</span>
+      </div>
+      <div class="step reveal">
+        <div class="stepNum">03</div>
+        <h3>Se realiza la audiencia</h3>
+        <p>Un conciliador acreditado dirige la reunión y ayuda a construir una salida que ambos puedan cumplir.</p>
+        <span class="stepTime">Presencial o virtual</span>
+      </div>
+      <div class="step reveal">
+        <div class="stepNum">04</div>
+        <h3>Se firma el acta</h3>
+        <p>El acuerdo queda por escrito con valor legal. Si alguien lo incumple, se exige directamente ante el juez.</p>
+        <span class="stepTime">Al cierre de la audiencia</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ 04 · CONTACTO ══════════════════ -->
+<section class="sec" id="contacto">
+  <div class="wrap">
+    <div class="secHead secHead--center reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="title">Reserva tu cita</h2>
+      <p class="lead">Déjanos tus datos y una consulta breve sobre tu caso. Te respondemos el mismo día hábil.</p>
+    </div>
+
+    <div class="contactGrid">
+
+      <div class="formCard reveal">
+        <h3>Cuéntanos tu caso</h3>
+        <p>Toma menos de un minuto. La primera consulta es gratuita y no te compromete a nada.</p>
+
+        <form class="form" id="form" novalidate>
+          <div class="row2">
+            <div class="field">
+              <label for="f-nombre">Nombre completo</label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="name" placeholder="María Quispe" required />
+              <span class="err">Escribe tu nombre para saber cómo dirigirnos a ti.</span>
+            </div>
+            <div class="field">
+              <label for="f-correo">Correo electrónico</label>
+              <input id="f-correo" name="correo" type="email" autocomplete="email" placeholder="maria@correo.com" required />
+              <span class="err">Revisa el correo: falta el @ o el dominio.</span>
+            </div>
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="f-tel">Teléfono / WhatsApp</label>
+              <input id="f-tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="999 999 999" required />
+              <span class="err">Necesitamos un número de 9 dígitos para llamarte.</span>
+            </div>
+            <div class="field">
+              <label for="f-caso">Tipo de caso</label>
+              <select id="f-caso" name="caso">
+                <option>Pensión de alimentos</option>
+                <option>Tenencia y visitas</option>
+                <option>Desalojo</option>
+                <option>Deudas y cobranzas</option>
+                <option>Contratos e indemnizaciones</option>
+                <option>Conflicto vecinal</option>
+                <option>Otro / todavía no lo sé</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-msg">Consulta breve sobre tu caso</label>
+            <textarea id="f-msg" name="mensaje" placeholder="Ej.: Alquilé mi departamento y el inquilino lleva cuatro meses sin pagar." required></textarea>
+            <span class="err">Cuéntanos en una o dos líneas qué ocurrió.</span>
+          </div>
+
+          <button class="btn btn--solid btn--lg btn--block" type="submit">Reservar mi cita</button>
+          <p class="formNote">Tus datos se usan solo para responder tu consulta, conforme a la Ley N.° 29733 de Protección de Datos Personales.</p>
+
+          <div class="formOk" id="formOk" role="status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Listo, <b id="okName">tu solicitud</b> quedó registrada. Se abrió WhatsApp con tu mensaje: envíalo y coordinamos la cita hoy mismo.</span>
+          </div>
+        </form>
+      </div>
+
+      <div class="reveal">
+        <div class="infoList">
+          <div class="infoItem">
+            <span class="infoIc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div>
+              <b>Dirección</b>
+              <p>Av. San Luis 2076, Of. 305<br>San Borja, Lima</p>
+            </div>
+          </div>
+
+          <div class="infoItem">
+            <span class="infoIc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+            <div>
+              <b>Teléfono y WhatsApp</b>
+              <p><a href="tel:+51936635469">936 635 469</a></p>
+            </div>
+          </div>
+
+          <div class="infoItem">
+            <span class="infoIc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+            <div>
+              <b>Correo</b>
+              <p><a href="mailto:consultas@conciliando.com.pe">consultas@conciliando.com.pe</a></p>
+            </div>
+          </div>
+
+          <div class="infoItem">
+            <span class="infoIc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div style="flex:1">
+              <b>Horario</b>
+              <div class="hours"><span>Lunes a viernes</span><span>9:00 – 17:00</span></div>
+              <div class="hours"><span>Sábados</span><span>Con cita previa</span></div>
+              <div class="hours off"><span>Domingos y feriados</span><span>Cerrado</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map">
+          <iframe
+            title="Ubicación del centro de conciliación en San Borja"
+            src="https://www.google.com/maps?q=Av.+San+Luis+2076,+San+Borja,+Lima,+Per%C3%BA&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footTop">
+
+      <div>
+        <a class="logo" href="#top">
+          <span class="logoMark" aria-hidden="true"><img src="img/logoconciliando.jpg" alt="" /></span>
+          <span class="logoTxt">
+            <span class="logoName">Conciliando</span>
+            <span class="logoSub">Centro de conciliación</span>
+          </span>
+        </a>
+        <p class="footAbout">Centro de conciliación extrajudicial autorizado por el Ministerio de Justicia y Derechos Humanos. San Borja, Lima.</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9V7.5c0-.7.3-1.1 1.2-1.1H17V3.6c-.5-.1-1.5-.2-2.6-.2-2.6 0-4.2 1.5-4.2 4.3V9H7.5v3H10v9h4v-9h2.6l.4-3H14Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.6 3.4 3.5 3.6v2.6c-1.3.1-2.5-.3-3.6-1v5.6c0 4.4-4.4 6.9-8 4.6-2.6-1.7-2.9-5.5-.6-7.6 1-.9 2.4-1.4 3.8-1.2v2.7c-1.7-.4-2.9 1-2.4 2.4.4 1.2 1.9 1.7 2.9.9.5-.4.7-1 .7-1.7V3h3.7Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 8.5H3.6V21h3.3V8.5ZM5.2 3a1.9 1.9 0 1 0 0 3.9 1.9 1.9 0 0 0 0-3.9ZM20.4 21h-3.3v-6.1c0-1.5-.5-2.5-1.8-2.5-1 0-1.6.7-1.9 1.4v7.2H10s.1-11.7 0-12.5h3.3v1.8c.4-.7 1.3-1.7 3.1-1.7 2.3 0 4 1.5 4 4.7V21Z"/></svg></a>
+          <a href="https://wa.me/51936635469" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.5.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.8.9c.2.1.4.2.5.3.1.2.1.6-.1 1.1Z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footTitle">Servicios</p>
+        <nav class="footNav">
+          <a href="#servicios">Pensión de alimentos</a>
+          <a href="#servicios">Tenencia y visitas</a>
+          <a href="#servicios">Desalojos</a>
+          <a href="#servicios">Deudas y cobranzas</a>
+          <a href="#servicios">Contratos</a>
+          <a href="#servicios">Conflictos vecinales</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footTitle">El centro</p>
+        <nav class="footNav">
+          <a href="#nosotros">Quiénes somos</a>
+          <a href="#nosotros">Nuestro equipo</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#experiencia">Cómo funciona</a>
+          <a href="#contacto">Reservar cita</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footTitle">Datos de contacto</p>
+        <div class="footData">
+          <b>Av. San Luis 2076, Of. 305</b>
+          San Borja, Lima 15037, Perú<br><br>
+          <b>Atención</b>
+          Lunes a viernes · 9:00 – 17:00<br>
+          Sábados con cita previa<br><br>
+          <a href="tel:+51936635469">936 635 469</a><br>
+          <a href="mailto:consultas@conciliando.com.pe">consultas@conciliando.com.pe</a><br><br>
+          <b>Registro</b>
+          Autorización MINJUSDH<br>
+          R. D. N.° ____ · Conciliadores vigentes
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footBottom">
+      <span>© <span id="year">2026</span> Conciliando · Centro de Conciliación Extrajudicial</span>
+      <span>
+        <a href="#">Libro de reclamaciones</a> ·
+        <a href="#">Términos y condiciones</a> ·
+        <a href="#">Política de privacidad</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════ BOTONES FLOTANTES ══════════════════ -->
+<div class="fabDock">
+  <a class="fabBtn fabWa" href="https://wa.me/51936635469?text=Hola%2C%20quiero%20consultar%20sobre%20una%20conciliaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.1-.3.3-.1.5.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.8.9c.2.1.4.2.5.3.1.2.1.6-.1 1.1Z"/></svg>
+  </a>
+  <a class="fabBtn fabCita" href="#contacto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/><path d="m9 16 2 2 4-4"/>
+    </svg>
+    <span>Reservar cita</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var WA = '51936635469';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $  = function(s, c){ return (c||document).querySelector(s); };
+  var $$ = function(s, c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+
+  /* ── Año ──────────────────────────────────────────────────────────────── */
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ── Header con sombra al hacer scroll ────────────────────────────────── */
+  var header = $('#header');
+  var onScroll = function(){ header.classList.toggle('is-stuck', window.scrollY > 12); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive:true });
+
+  /* ── Menú lateral ─────────────────────────────────────────────────────── */
+  var drawer = $('#drawer'), scrim = $('#scrim'), hambBtn = $('#hambBtn');
+
+  function openDrawer(){
+    scrim.hidden = false;
+    requestAnimationFrame(function(){ scrim.classList.add('is-open'); });
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden','false');
+    hambBtn.setAttribute('aria-expanded','true');
+    document.body.classList.add('is-locked');
+    var first = drawer.querySelector('a, button');
+    if (first) first.focus({ preventScroll:true });
+  }
+  function closeDrawer(){
+    scrim.classList.remove('is-open');
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden','true');
+    hambBtn.setAttribute('aria-expanded','false');
+    document.body.classList.remove('is-locked');
+    window.setTimeout(function(){ if (!scrim.classList.contains('is-open')) scrim.hidden = true; }, 420);
+  }
+
+  hambBtn.addEventListener('click', openDrawer);
+  $('#drawerClose').addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  $$('#drawer a').forEach(function(a){ a.addEventListener('click', closeDrawer); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) { closeDrawer(); hambBtn.focus(); }
+  });
+
+  /* ── Carrusel ─────────────────────────────────────────────────────────── */
+  var slides = $$('.slide'), dots = $$('.dot');
+  var i = 0, timer = null, DUR = 7000;
+
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('is-active', k === i); });
+    dots.forEach(function(d, k){
+      var on = k === i;
+      d.classList.toggle('is-active', on);
+      d.setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on && reduce) d.classList.add('no-auto');
+    });
+    // reinicia la barra de progreso del indicador activo
+    var act = dots[i];
+    act.classList.remove('is-active');
+    void act.offsetWidth;
+    act.classList.add('is-active');
+    restart();
+  }
+  function next(){ go(i + 1); }
+  function prev(){ go(i - 1); }
+  function restart(){
+    window.clearInterval(timer);
+    if (reduce) return;
+    timer = window.setInterval(next, DUR);
+  }
+
+  dots.forEach(function(d){ d.addEventListener('click', function(){ go(+d.dataset.i); }); });
+  $('#nextBtn').addEventListener('click', next);
+  $('#prevBtn').addEventListener('click', prev);
+
+  var hero = $('.hero');
+  hero.addEventListener('mouseenter', function(){ window.clearInterval(timer); });
+  hero.addEventListener('mouseleave', restart);
+  hero.addEventListener('focusin',  function(){ window.clearInterval(timer); });
+  hero.addEventListener('focusout', restart);
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden) window.clearInterval(timer); else restart();
+  });
+
+  /* Deslizar en táctil */
+  var x0 = null;
+  hero.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, { passive:true });
+  hero.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 45) { dx < 0 ? next() : prev(); }
+    x0 = null;
+  }, { passive:true });
+
+  restart();
+
+  /* ── Reveal al hacer scroll ───────────────────────────────────────────── */
+  var items = $$('.reveal');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        var group = Array.prototype.indexOf.call(el.parentNode.children, el);
+        el.style.transitionDelay = Math.min(group, 5) * 70 + 'ms';
+        el.classList.add('is-in');
+        io.unobserve(el);
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* ── Atajo activo según la sección visible ────────────────────────────── */
+  var links = $$('.shortcut');
+  var secs = links.map(function(a){ return $(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window && secs.length) {
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        links.forEach(function(a){
+          a.classList.toggle('is-active', a.getAttribute('href') === '#' + en.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    secs.forEach(function(s){ spy.observe(s); });
+  }
+
+  /* ── Video de presentación (YouTube, Vimeo o archivo .mp4) ────────────── */
+  var vbox = $('#videoBox');
+  if (vbox) {
+    var url = (vbox.getAttribute('data-video') || '').trim().replace(/["'<>]/g, '');
+    if (url) {
+      var m, html = '';
+      if (/\.(mp4|webm|ogv)(\?|$)/i.test(url)) {
+        html = '<video src="' + url + '" autoplay muted loop playsinline controls preload="auto"></video>';
+      } else if ((m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{6,})/))) {
+        html = '<iframe src="https://www.youtube.com/embed/' + m[1] + '?rel=0&autoplay=1&mute=1&loop=1&playsinline=1&playlist=' + m[1] + '" ' +
+               'title="Video de presentación" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      } else if ((m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/))) {
+        html = '<iframe src="https://player.vimeo.com/video/' + m[1] + '?autoplay=1&muted=1&loop=1" title="Video de presentación" ' +
+               'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+      } else {
+        html = '<iframe src="' + url + '" title="Video de presentación" allowfullscreen loading="lazy"></iframe>';
+      }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function(en, obs){
+          if (!en[0].isIntersecting) return;
+          vbox.innerHTML = html;
+          obs.disconnect();
+        }, { threshold: .25 }).observe(vbox);
+      } else {
+        vbox.innerHTML = html;
+      }
+    }
+  }
+
+  /* ── Formulario ───────────────────────────────────────────────────────── */
+  var form = $('#form'), ok = $('#formOk');
+
+  function setError(field, on){ field.classList.toggle('has-error', on); return !on; }
+
+  function validate(){
+    var valid = true;
+    var nombre = $('#f-nombre'), correo = $('#f-correo'), tel = $('#f-tel'), msg = $('#f-msg');
+
+    valid &= setError(nombre.parentNode, nombre.value.trim().length < 2);
+    valid &= setError(correo.parentNode, !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correo.value.trim()));
+    valid &= setError(tel.parentNode,    tel.value.replace(/\D/g,'').length < 9);
+    valid &= setError(msg.parentNode,    msg.value.trim().length < 10);
+
+    return !!valid;
+  }
+
+  $$('#form input, #form textarea').forEach(function(el){
+    el.addEventListener('input', function(){ el.parentNode.classList.remove('has-error'); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!validate()) {
+      var bad = form.querySelector('.has-error input, .has-error textarea');
+      if (bad) bad.focus();
+      return;
+    }
+
+    var nombre = $('#f-nombre').value.trim();
+    var texto =
+      'Hola, quiero reservar una cita.\n\n' +
+      'Nombre: ' + nombre + '\n' +
+      'Correo: ' + $('#f-correo').value.trim() + '\n' +
+      'Teléfono: ' + $('#f-tel').value.trim() + '\n' +
+      'Tipo de caso: ' + $('#f-caso').value + '\n' +
+      'Consulta: ' + $('#f-msg').value.trim();
+
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+
+    $('#okName').textContent = nombre;
+    ok.classList.add('is-on');
+    form.reset();
+  });
+
+})();
+</script>
+</body>
+</html>
